@@ -1,0 +1,11 @@
+# Base image for ClamAV
+FROM clamav/clamav:latest
+
+# Update ClamAV database
+RUN freshclam
+
+# Expose ClamAV daemon port
+EXPOSE 3310
+
+# Start the ClamAV daemon
+CMD ["clamd", "--foreground", "-c", "/etc/clamav/clamd.conf"]

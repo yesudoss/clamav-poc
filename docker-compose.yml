@@ -11,7 +11,7 @@ services:
     depends_on:
       - clamav
     environment:
-      - CLAMAV_HOST=clamav
+      - CLAMAV_HOST=localhost
       - CLAMAV_PORT=3310
 
   clamav:
